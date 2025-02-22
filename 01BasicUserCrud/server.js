@@ -10,6 +10,15 @@ const PORT = 3300;
 // Array for Temporary Storage
 const users = [{ id: 1, name: "Ravi" }];
 
+app.get('/', (req, res) => {
+  try {
+    res.status(200).json({message:"Home Page"})
+  } catch (error) {
+    console.error(error.message)
+    res.status(500).json({message:"Internal Server Error"})
+  }
+})
+
 // GET - all users
 app.get("/users", (req, res) => {
   try {
@@ -18,7 +27,7 @@ app.get("/users", (req, res) => {
     }
     res
       .status(200)
-      .json({ message: "Users Found Successfully", users: allUsers });
+      .json({ message: "Users Found Successfully", users: users });
   } catch (error) {
     console.error(error.message);
     res.status(500).json({ message: "Internal Server Error" });
