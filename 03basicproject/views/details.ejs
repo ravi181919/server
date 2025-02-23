@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task - Details</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div
+      class="container min-w-full min-h-screen bg-zinc-900 text-white flex gap-10 items-center flex-col"
+    >
+      <h1
+        class="w-full py-5 px-10 text-center mx-auto text-orange-400 shadow shadow-black text-3xl font-black leading-none"
+      >
+        Task Details.
+      </h1>
+      <div class="container px-2">
+        <div
+          class="min-h-[40vh] shadow shadow-black py-4 rounded-md px-6 bg-zinc-800 drop-shadow-lg"
+        >
+          <a href="/" class="inline-block font-medium py-2 text-orange-400">Go to back</a>
+          <h1
+            class="text-2xl font-black leading-none capitalize border-b-[1px] border-orange-500 py-2"
+          >
+            Name of task
+            <span class="text-orange-400"> <%=filename.slice(0, -4) %></span>
+          </h1>
+          <p class="text-sm font-normal mt-2 pl-5 w-full">
+            <%=filedata %> 
+          </p> 
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
