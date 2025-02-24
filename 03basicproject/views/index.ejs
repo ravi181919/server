@@ -3,12 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task Taking </title>
+    <title>Task - Taking</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   </head>
   <body>
-    <div class="container min-w-full min-h-screen bg-zinc-900 text-white ">
-        <h1 class="w-full py-5 px-10 text-center mx-auto text-orange-400 shadow shadow-black text-3xl font-black leading-none">Task Taking</h1>
+    <div class="container min-w-full min-h-screen bg-zinc-900 text-white">
+      <h1
+        class="w-full py-5 px-10 text-center mx-auto text-orange-400 shadow shadow-black text-3xl font-black leading-none"
+      >
+        Task Taking
+      </h1>
       <div class="form px-10 py-4 w-full">
         <form action="/create" method="post">
           <input
@@ -29,13 +33,37 @@
           />
         </form>
       </div>
-      <div class="p-10 w-full flex flex-wrap justify-center md:justify-center lg:justify-start gap-4 items-center">
+      <div
+        class="p-10 w-full flex flex-wrap justify-center md:justify-center lg:justify-start gap-4 items-center"
+      >
         <% if(files.length > 0 ) { files.forEach((elem) => {%>
-        <div class="cards py-2 min-w-full md:min-w-80 lg:min-w-64 px-5 bg-zinc-800 rounded-md">
-          <h1 class="tracking-tight text-2xl font-medium leading-none">
-            <%= elem.slice(0, -4) %>
-          </h1>
-          <a href="/details/<%= elem %>" class="text-blue-500 mt-1 inline-block">Read more.</a>
+        <div
+          class="cards py-2 min-w-full md:min-w-80 lg:min-w-64 px-5 bg-zinc-800 rounded-md"
+        >
+          <div class="flex w-full items-center justify-between">
+            <h1
+              class="tracking-tight capitalize text-2xl font-medium leading-none"
+            >
+              <%= elem.slice(0, -4) %>
+            </h1>
+            <a
+              href="/delete/<%= elem%>"
+              class="text-red-400 text-sm font-normal capitalize inline-block"
+              >Delete file</a
+            >
+          </div>
+          <div class="flex w-full items-center justify-between mt-2">
+            <a
+              href="/details/<%= elem %>"
+              class="text-blue-400 text-sm font-normal capitalize inline-block"
+              >Read more...</a
+            >
+            <a
+              href="/edit/<%= elem %>"
+              class="text-yellow-400 text-sm font-normal capitalize inline-block"
+              >edit filename</a
+            >
+          </div>
         </div>
         <%})} else{ %>
         <h1 class="text-white/40">No tasks..</h1>

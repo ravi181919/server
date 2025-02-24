@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task - Delete</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div
+      class="form w-full bg-zinc-900 min-h-screen text-white/85 flex items-center w-full justify-start flex-col"
+    >
+      <h1
+        class="w-full py-5 px-10 text-center mx-auto text-orange-400 shadow shadow-black text-3xl font-black leading-none"
+      >
+        Task Details.
+      </h1>
+      <form
+        action="/delete"
+        method="post"
+        class="md:w-[80%] lg:w-[60%] lg:px-0 md:px-0 px-10 p-10 w-[100%]"
+      >
+        <div
+          class="shadow shadow-black py-4 rounded-md px-6 bg-zinc-800 drop-shadow-lg"
+        >
+          <a href="/" class="inline-block font-medium py-2 text-orange-400"
+            >Go to back</a
+          >
+          <h1
+            class="text-2xl font-black leading-none capitalize border-b-[1px] border-orange-500 py-2"
+          >
+            Are You sure to delete
+            <span class="text-orange-400"> <%=filename.slice(0, -4) %> </span>
+          </h1>
+        </div>
+        <button
+          type="submit"
+          value="<%= filename%>"
+          name="filename"
+          class="block font-medium lg:w-full w-full mx-auto cursor-pointer hover:bg-orange-700 py-2 my-1 outline-none lg:px-5 rounded-md bg-orange-600"
+        >
+          Delete
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
