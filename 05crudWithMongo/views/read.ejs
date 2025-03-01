@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form UI</title>
+    <link rel="stylesheet" href="/css/index.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="text-white/85 w-full min-h-screen bg-black/85 px-5 py-5">
+      <a href="/" class="text-blue-500 py-10">Create User</a>
+      <h2 class="text-2xl font-bold text-cent mt-5 mb-2">All Users</h2>
+      <div
+        class="Users flex w-full flex-wrap justify-start px-10 items-center gap-3"
+      >
+        <% if(users.length > 0) { %> <% users.forEach((user) => { %>
+        <div class="w-64 p-4 bg-zinc-900 rounded-lg">
+          <div class="h-52 overflow-hidden rounded-lg bg-zinc-500 w-full mb-2">
+            <img
+              src="<%= user.image %>"
+              class="h-full w-full object-cover object-top"
+              alt="<%= user.name%>-image"
+            />
+          </div>
+          <h2 class="font-medium text-xl"><%= user.name%></h2>
+          <h5 class="text-xs text-zinc-300"><%= user.email %></h5>
+          <div class="flex gap-4 items-center mt-4">
+            <a href="" class="text-blue-500">Edit User</a>
+            <a href="/delete/<%= user._id %>" class="text-red-500"
+              >Delete User</a
+            >
+          </div>
+        </div>
+        <% }) %> <% } else { %>
+        <h1 class="text-sm text-zinc-500">No Users..</h1>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

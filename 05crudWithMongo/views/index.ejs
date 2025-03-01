@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form UI</title>
+    <link rel="stylesheet" href="/css/index.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="text-white/85 h-screen bg-black/85 w-full flex flex-col">
+      <a href="/read" class="text-blue-500 mx-10 py-10">Read User</a>
+      <div
+        class="w-full max-w-m p-8 space-y-4 bg-white/20 rounded-lg shadow-md mx-auto sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl"
+      >
+        <h2 class="text-2xl font-bold text-center">Create User</h2>
+        <form action="/create" method="post" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium">Name</label>
+            <input
+              type="text"
+              name="name"
+              placeholder="enter your name"
+              class="w-full p-2 mt-1 border text-black outline-none rounded-md focus:ring-blue-500 focus:border-blue-500"
+              required
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium">Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="enter your email"
+              class="w-full p-2 mt-1 border outline-none text-black rounded-md focus:ring-blue-500 focus:border-blue-500"
+              required
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium">Message</label>
+            <input
+              type="text"
+              name="image"
+              placeholder="enter image url"
+              class="w-full p-2 mt-1 border outline-none text-black rounded-md focus:ring-blue-500 focus:border-blue-500"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
